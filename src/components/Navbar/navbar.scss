@@ -1,0 +1,65 @@
+.container-fluid{
+  .fa-bars{
+    display: none;
+  }
+  .navbar-top{
+    
+    padding: 2rem 0;
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    color: white;
+  
+    .right{
+      ul{
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        li{
+          padding-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 480px) {
+  .container-fluid {
+    .fa-bars {
+      display: block;
+      padding-left: 1rem;
+      padding-top: 1rem;
+      z-index: 1;
+      
+    }
+    .navbar-top {
+      display: block;
+      padding: 2rem 0;
+      background-color: black;
+      color: white;
+      position: fixed; /* Fixed positioning to slide in from the left */
+      top: 0; /* Position from the top */
+      left: -100%; /* Initially hide the navbar outside the viewport */
+      width: 80%; /* Adjust the width as needed */
+      transition: left 0.3s ease; /* Add transition for smooth animation */
+    }
+    .navbar-top.open {
+      left: 0; /* Slide in the navbar */
+    }
+    .navbar-top .left,
+    .navbar-top .right {
+      width: 100%; /* Take full width */
+      text-align: center; /* Center align text */
+    }
+    .navbar-top .right ul {
+      display: block; /* Stack menu items vertically */
+      padding: 0; /* Remove default padding */
+    }
+    .navbar-top .right ul li {
+      padding: 1rem 0; /* Add padding to each menu item */
+    }
+  }
+}
